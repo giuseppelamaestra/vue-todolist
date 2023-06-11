@@ -18,7 +18,9 @@
     <li v-for="todoItem in todoList">
           <p>
             
-            {{ todoItem.text }}
+             <span class="done" :class = >
+                {{ todoItem.text }}
+             </span> 
 
             <span @click = "removeTodoElement(Index)">
                 <i class="fa-solid fa-trash"></i>
