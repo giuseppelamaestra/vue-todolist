@@ -18,7 +18,7 @@
     <li v-for="todoItem in todoList">
           <p>
             
-             <span class="done" :class = >
+             <span class="wrapper" :class="todoItem.done ? 'done' : '' ">
                 {{ todoItem.text }}
              </span> 
 

@@ -45,6 +45,6 @@ input {
     padding: 15px 32px;
 }
 
-.done {
+span.wrapper.done{
     text-decoration: line-through;
 }
