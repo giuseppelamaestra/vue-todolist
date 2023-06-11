@@ -13,11 +13,58 @@
 
 
 const { createApp } = Vue
-
+    
 createApp({
   data() {
     return {
-      message: 'Hello Vue!'
+      todoList: [{
+         text: "comprare il latte di mandorla",
+         done: true
+      },
+      {
+        text: "impacchettare vestiti invernali",
+        done: false
+     },
+     {
+        text: "spedire una lettera",
+        done: true
+     },
+     {
+        text: "leggere Guerra e Pace",
+        done: true
+     },
+     {
+        text: "guardare l'ultimo film di Celine Sciamma",
+        done: false
+     },
+     
+     {
+        text: "ascoltare il disco di bbyMutha",
+        done: true
+     },
+
+     {
+        text: "bere 2 litri d'acqua",
+        done: false
+     },
+      ],
+      newElement : "",
     }
-  }
+  },
+  methods: {
+       addNewTodoElement(todoElement) {
+        this.todoList.push(todoElement.text)
+        this.newElement = ""
+       },
+
+       removeTodoElement(todoElementIndex){
+        if(todoElementIndex >= this.todoList.length || todoElementIndex < 0){
+             console.warn("occhio!")
+        } else {
+             this.todoList.splice(todoElementIndex, 1);
+        }
+       }
+
+  },
 }).mount('#app')
+

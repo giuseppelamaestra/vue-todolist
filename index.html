@@ -6,16 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue-List</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-<div id="app">{{ message }}</div>
+<div id="app">
+
+<div class="todo-List">
+ <ul>
+    <li v-for="todoItem in todoList">
+          <p>
+            
+            {{ todoItem.text }}
+
+            <span @click = "removeTodoElement(Index)">
+                <i class="fa-solid fa-trash"></i>
+              </span>
+
+          </p> 
+
+          
+    </li>
+ </ul>
+  
+
+
+ <div>
+     
+    <input type="text" v-model="newElement" @keyup.enter = "addNewTodoElement(newElement)">
+     <button class="todo-adder" @click="addNewTodoElement(newElement)">add new item</button>
+   </div>
+
+</div>
 
 
 
+</div>
 
-
-    <script src="script/myscript.js"></script>
+  
+   <script src="script/myscript.js"></script>
 </body>
 </html>
