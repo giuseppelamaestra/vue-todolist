@@ -52,10 +52,15 @@ createApp({
     }
   },
   methods: {
-       addNewTodoElement(todoElement) {
-        this.todoList.push(todoElement)
-        this.newElement = ""
-       },
+    addNewTodoElement(todoElement){
+        if (this.newElement !== ''){
+            this.todoList.push({
+                text: todoElement,
+                done: false,
+            });
+            this.newElement = '';
+        }
+    },
 
        removeTodoElement(todoElementIndex){
         if(todoElementIndex >= this.todoList.length || todoElementIndex < 0){
