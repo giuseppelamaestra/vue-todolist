@@ -53,7 +53,7 @@ createApp({
   },
   methods: {
        addNewTodoElement(todoElement) {
-        this.todoList.push(todoElement.text)
+        this.todoList.push(todoElement)
         this.newElement = ""
        },
 
@@ -61,7 +61,7 @@ createApp({
         if(todoElementIndex >= this.todoList.length || todoElementIndex < 0){
              console.warn("occhio!")
         } else {
-             this.todoList.splice(todoElementIndex, 1);
+             this.todoList.splice(todoElementIndex, 1)[0];
         }
        }
 
